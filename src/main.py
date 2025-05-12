@@ -29,4 +29,8 @@ router = APIRouter()
 async def home_page():
     return FileResponse('index.html')
 
+@router.get('/id')
+async def my_empl_id():
+    return '12345678'
+
 app.include_router(router)
