@@ -31,6 +31,6 @@ async def home_page():
 
 @router.get('/id')
 async def my_empl_id():
-    return '12345678'
+    return {'empl_id':'12345678'}
 
 app.include_router(router)
