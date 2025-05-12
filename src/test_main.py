@@ -13,4 +13,4 @@ def test_home_page():
 def test_my_empl_id():
     response = client.get("/id")
     assert response.status_code == 200
-    assert response.text == '00000000'
+    assert response.text == '12345678'
