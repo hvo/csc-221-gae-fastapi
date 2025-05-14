@@ -4,7 +4,8 @@ steps:
   args: ['-c', 'cd src && pip install -r requirements.txt -r requirements-test.txt && pytest']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && cd src && gcloud app deploy']
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && cd src && gcloud run deploy run-fastapi --source . --region=us-central1 --allow-unauthenticated']
+  # args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && cd src && gcloud app deploy']
 timeout: '1600s'
 options:
   logging: CLOUD_LOGGING_ONLY
